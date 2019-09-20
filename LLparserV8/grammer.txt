@@ -1,0 +1,13 @@
+<Program>::= program <declaration-seq> begin <statement-seq> end $
+<declaration-seq>::= <declaration> <declaration-tail>
+<declaration-tail>::= # | <declaration> <declaration-tail>
+<declaration>::= <declarer> | proc id <x>
+<x>::= <statement> | ( <declarer> ) = <statement>
+<declarer>::= <type> id <y>
+<y>::= # | := <expr>
+<statement-seq>::= <statement> <statement-tail>
+<statement-tail>::= # | <statement> <statement-tail>
+<statement>::= id := <expr> ; | call id <z>
+<z>::= ; | ( <expr> ) ;
+<type>::= int | bool
+<expr>::= num | true | false

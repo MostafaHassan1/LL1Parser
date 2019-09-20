@@ -1,0 +1,6 @@
+ program 
+ int x:= 10 
+ proc y z:= 10; 
+ begin
+ call y ; call x ;
+ end  $
